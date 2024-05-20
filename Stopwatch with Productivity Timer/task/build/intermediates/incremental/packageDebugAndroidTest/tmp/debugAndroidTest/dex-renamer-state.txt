@@ -1,0 +1,4 @@
+#Mon May 20 15:37:38 EDT 2024
+base.0=/home/rennie/AndroidStudioProjects/Stopwatch with Productivity Timer/Stopwatch with Productivity Timer/task/build/intermediates/dex/debugAndroidTest/mergeDexDebugAndroidTest/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
