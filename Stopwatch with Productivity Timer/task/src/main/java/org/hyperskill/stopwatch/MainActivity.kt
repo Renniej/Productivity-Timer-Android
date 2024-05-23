@@ -1,9 +1,15 @@
 package org.hyperskill.stopwatch
 
+import android.graphics.BlendModeColorFilter
+import android.graphics.Color
+import android.graphics.ColorFilter
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import org.hyperskill.stopwatch.databinding.ActivityMainBinding
+import java.util.Random
 import kotlin.concurrent.thread
 import kotlin.time.DurationUnit
 import kotlin.time.toDuration
@@ -42,15 +48,35 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
 
+
         setContentView(binding.root)
 
+        binding.progressBar.visibility = View.GONE;
+
         binding.startButton.setOnClickListener{
-            if (!timerActive)
+            if (!timerActive) {
                 handler.postDelayed(timer,1000)
+                binding.progressBar.visibility = View.VISIBLE
+
+            }
+
         }
 
         binding.resetButton.setOnClickListener{
             resetTimer()
+            binding.progressBar.visibility = View.GONE
+        }
+
+
+        thread(start = true) {
+            val rnd: Random = Random()
+            while (true) {
+                binding.progressBar?.indeterminateDrawable?.setColorFilter(Color.RED,  PorterDuff.Mode.MULTIPLY)
+                Thread.sleep(500)
+                binding.progressBar?.indeterminateDrawable?.setColorFilter(Color.BLUE,  PorterDuff.Mode.MULTIPLY)
+
+            }
+
         }
 
     }

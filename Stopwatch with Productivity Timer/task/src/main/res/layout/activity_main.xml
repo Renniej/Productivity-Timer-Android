@@ -21,6 +21,7 @@
     </TextView>
 
     <LinearLayout
+        android:id="@+id/btnContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView"
@@ -44,7 +45,19 @@
             android:layout_weight="1">
 
         </Button>
-    </LinearLayout>
 
+
+
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminateDrawable="@drawable/progress_bar"
+        android:indeterminateOnly="true"
+        android:layout_below="@id/btnContainer"
+        >
+
+    </ProgressBar>
 
     </RelativeLayout>

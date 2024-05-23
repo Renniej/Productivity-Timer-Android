@@ -8,6 +8,10 @@
         "source": "/home/rennie/.gradle/daemon/8.6/org.hyperskill.stopwatch.Stopwatch_with_Productivity_Timer-task-pngs-16:/drawable-xhdpi/ic_launcher_background.png"
     },
     {
+        "merged": "/home/rennie/.gradle/daemon/8.6/org.hyperskill.stopwatch.Stopwatch_with_Productivity_Timer-task-merged_res-21:/drawable_progress_bar.xml.flat",
+        "source": "/home/rennie/.gradle/daemon/8.6/org.hyperskill.stopwatch.Stopwatch_with_Productivity_Timer-task-main-23:/drawable/progress_bar.xml"
+    },
+    {
         "merged": "/home/rennie/.gradle/daemon/8.6/org.hyperskill.stopwatch.Stopwatch_with_Productivity_Timer-task-merged_res-21:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "/home/rennie/.gradle/daemon/8.6/org.hyperskill.stopwatch.Stopwatch_with_Productivity_Timer-task-main-23:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },

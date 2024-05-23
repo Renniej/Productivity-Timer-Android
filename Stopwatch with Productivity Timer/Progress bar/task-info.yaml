@@ -48,6 +48,9 @@ files:
   - name: src/test/java/org/hyperskill/tests/stopwatch/Stage3UnitTest.kt
     visible: false
     learner_created: false
+  - name: src/main/res/drawable/progress_bar.xml
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/9288#comment
 status: Unchecked
 record: -1

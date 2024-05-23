@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -21,6 +23,12 @@ public final class ActivityMainBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
+  public final LinearLayout btnContainer;
+
+  @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final Button resetButton;
 
   @NonNull
@@ -29,9 +37,12 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView textView;
 
-  private ActivityMainBinding(@NonNull RelativeLayout rootView, @NonNull Button resetButton,
-      @NonNull Button startButton, @NonNull TextView textView) {
+  private ActivityMainBinding(@NonNull RelativeLayout rootView, @NonNull LinearLayout btnContainer,
+      @NonNull ProgressBar progressBar, @NonNull Button resetButton, @NonNull Button startButton,
+      @NonNull TextView textView) {
     this.rootView = rootView;
+    this.btnContainer = btnContainer;
+    this.progressBar = progressBar;
     this.resetButton = resetButton;
     this.startButton = startButton;
     this.textView = textView;
@@ -64,6 +75,18 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnContainer;
+      LinearLayout btnContainer = ViewBindings.findChildViewById(rootView, id);
+      if (btnContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.resetButton;
       Button resetButton = ViewBindings.findChildViewById(rootView, id);
       if (resetButton == null) {
@@ -82,7 +105,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((RelativeLayout) rootView, resetButton, startButton, textView);
+      return new ActivityMainBinding((RelativeLayout) rootView, btnContainer, progressBar,
+          resetButton, startButton, textView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
